@@ -1,0 +1,4 @@
+#ignore modules--npm!
+node_modules
+
+#if you run into problem, refer to github's public node.gitignore file

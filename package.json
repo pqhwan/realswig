@@ -1,0 +1,27 @@
+{
+  "name": "swiggly",
+  "version": "0.0.0",
+  "description": "swig",
+  "main": "web.js",
+  "scripts": {
+    "test": "node web.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pqhwan/realswig"
+  },
+  "keywords": [
+    "crowdsourcing",
+    "delivery"
+  ],
+  "author": "Pete Kim",
+  "license": "none yet",
+  "bugs": {
+    "url": "https://github.com/pqhwan/realswig/issues"
+  },
+  "homepage": "https://github.com/pqhwan/realswig",
+  "dependencies": {
+    "logfmt": "~0.21.0",
+    "express": "~3.5.0"
+  }
+}
