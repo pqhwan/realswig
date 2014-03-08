@@ -21,7 +21,6 @@
   },
   "homepage": "https://github.com/pqhwan/realswig",
   "dependencies": {
-    "logfmt": "~0.21.0",
-    "express": "~3.5.0"
+    "colors": "~0.6.2"
   }
 }
