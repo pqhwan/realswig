@@ -5,7 +5,7 @@ function front(response){
     //for root dir GET request
     console.log('front route done');
     //test page transfer
-    fs.readFile('html/negopage.html', function(err, data){
+    fs.readFile('html/demopage2.html', function(err, data){
         response.writeHead(200,{'Content-Type':'text/html'});
         response.write(data);
         response.end();

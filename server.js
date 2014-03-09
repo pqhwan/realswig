@@ -38,24 +38,3 @@ function startService(route, handlers){
 }
 
 exports.startService = startService;
-
-
-
-/* express version
-var express = require("express");
-var logfmt = require("logfmt");
-var app = express();
-
-app.use(logfmt.requestLogger());
-
-app.get('/', function(req, res){
-	res.send('Hello World!');
-});
-
-var port = Number(process.env.PORT || 9001);
-
-app.listen(port, function(){
-	console.log("listening on " + port);
-}); */
-
-
