@@ -8,20 +8,79 @@
     	
         <!--Bootstrap JS & Jqeury-->
 		<script src="js/jquery-2.1.0.js"></script>
-		<script src="js/bootstrap.js"> </script>
+        <script src="js/bootstrap.js"> </script>
+        <style>
+            #header{
+                background-color:black;
+                color:white;
+            }
+            #front{
+                height:550px;
+                padding:70px;
+            }
+            #what{
+                height:650px;
+                padding:20px;
+                background-color:grey;
+            }
+
+        </style>
+
     </head>
 
     <body>
-        <div class="container">
-            <div class="row">
-                <div class="text-center">
-swiggl
+            <!--what is this?-->
+            <div id="header" class="row">
+                <h4 class="text-center">header</h4>
+            </div>
+            <div id="front">
+                <div class="container">
+                    <div class="row text-center">
+                        <font size="12">swiggly</font>
+                    </div>
+                    <div class="row text-center">
+                        <h3>Crowdshipping that works</h3>
+                    </div>
+                    <div id="video" class="row text-center">
+                        <img src="http://placehold.it/600x300/000000/ffffff&text=video">
+                    </div>
                 </div>
             </div>
-        </div>
-    </body>
+            <div id="what">
+                <div class="container">
+                    <div class="row text-center">
+                        <h4 style="color:white;">
+                        Swigly aspires to bring reliable, same-day delivery at a price
+                        range that was previously impossible.
+                        </h4>
+                        <img src="http://placehold.it/600x200/000000/ffffff&text=reliable-sameday-cheap">
+                    </div>
+                    <div class="row text-center" style="padding-top:30px">
+                        <h4 style="color:white;">
+                        We do this by matching your package with somebody in your area
+                        who happens to be traveling there already.</h4>
+                        <img src="http://placehold.it/600x200/000000/ffffff&text=matched">
+                    </div>
+                    <div class="row" style="padding-top:30px">
+                        <div class="col-md-6 col-xs-6">
+                            <button type="button" class=
+                                "btn btn-default center-block">
+                                    How to send packages
+                                </button>
+                        </div>
+                        <div class="col-md-6 col-xs-6">
+                            <button type="button" class=
+                                "btn btn-default center-block">
+                                    How to find packages
+                                </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="how-sender">
 
-
+            </div>
+        </body>
 </html>
 
 
