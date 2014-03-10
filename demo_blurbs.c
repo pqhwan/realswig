@@ -1,6 +1,5 @@
 SENDERS
 
-
     [finding a driver]
 
     *once you register your package, its destination and the desired time of delivery
@@ -25,7 +24,7 @@ SENDERS
     "Once you accept a deal, you will be asked to authorize the payment"
         //graphic: screen with payment form 
 
-    "For reliability, Swiggly will hold on to your authorization until your delivery is confirmed\
+    "For reliability, Swiggly holds on to your authorization until your delivery is confirmed\
         by your recipient via email"
         //graphic: Swiggly figure holding to a slip that says "pay John $20"
         //with the 
@@ -57,20 +56,21 @@ TRANSPORTERS
     you might be interested in, and we will keep an eye out for them as well!
 
     "If you travel frequently between cities, just tell us about it and we will keep\
-        an eye out for packages you might be interested in"
+        an eye out for packages you might be interested in!"
         //graphic: screen showing line between two cities and 
 
 
     [Payment & Trust]
-    Once you have found your package, your sender will be asked to make the payment up-front
+    "Once you have found your package, your sender will be asked to make the payment up-front"
 
-    However, for reliability, Swiggly will hold on to the payment approval until
-    the recipient confirms the delivery. 
+    "However, for reliability, Swiggly will hold on to the payment approval until\
+    the recipient confirms the delivery."
+
+    "to make sure your delivery is confirmed, upon delivery, you can ask the recipient to\
+        click the confirmation link in your presence"
+
+    "after the recipient clicks the link, the money goes right through our system and to you!"
     
-    To make sure that the recipient makes the confirmation, you can simply ask her to pull 
-    up the email we sent her with the confirmation link--once she clicks the link, the
-    payment goes right through our system and to you!
-
 
 
 
