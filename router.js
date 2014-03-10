@@ -1,9 +1,9 @@
 var colors = require('colors');
 
 function route(handlers, pathname, response){
-    console.log('about to route a reqeust for ' + pathname);
     if(typeof(handlers[pathname]) == 'function'){
         //handler found
+        console.log('handler found for path:'.green + pathname.green);
         handlers[pathname](response);
 
     } else{

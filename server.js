@@ -7,10 +7,11 @@ var url = require('url');
 var fs = require('fs');
 
 function startService(route, handlers){
+
+    //first responder to request
     function onRequest(request, response){
         var pathname = url.parse(request.url).pathname;
-				console.log('---new request starts'.cyan);
-
+				console.log('---new request'.rainbow);
 
 				//Takes care of requests for files under css/ and js/
         //if pathname looks like /js/~ or /css/~ 
@@ -26,9 +27,7 @@ function startService(route, handlers){
 					return;
 				}
 
-
-        //it's an actual route
-        console.log('Request received for path:'+ pathname);
+        //for requests not for CSS & JS dependency files
         route(handlers, pathname, response);
     }
 
