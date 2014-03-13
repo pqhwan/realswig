@@ -14,18 +14,21 @@ function startService(route, handlers){
 				console.log('---new request'.rainbow);
 
 				//Takes care of requests for files under css/ and js/
-        //if pathname looks like /js/~ or /css/~ 
+                //if pathname looks like /js/~ or /css/~ 
 				//TODO AND it does not uses any more slashes from thereon
 				//AND the path it asks for is real
-				if( /^\/(js|css)\//.test(pathname) && fs.existsSync(pathname.slice(1))){
-					console.log('sending asset: '.green+pathname.slice(1).green)
-					var mimetype = /css$/.test(pathname)? 'css':'javascript';
+				if( /^\/(img|js|css)\//.test(pathname) && fs.existsSync(pathname.slice(1))){
+					console.log('sending asset: '.green+pathname.slice(1).green);
+
+                    var mimetype = pathname.match(/(img|js|css)/)[0];
+					//var mimetype = /css$/.test(pathname)? 'css':'javascript';
 					response.writeHead(200,{'Content-Type':'text/'+mimetype});
 					//TODO WARNING--synchronous method--possible bottlneck
 					response.write(fs.readFileSync(pathname.slice(1)));
 					response.end();
 					return;
-				}
+				} 
+                 
 
         //for requests not for CSS & JS dependency files
         route(handlers, pathname, response);

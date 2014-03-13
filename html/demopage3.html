@@ -1,7 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" class="no-js">
     <head>
-        <title>swiggly</title>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>Swiggly - People Powered Shipping</title>
 		<!-- Bootstrap CSS here -->
 		<link href="css/bootstrap.css" rel="stylesheet" />
 		<link href="css/bootstrap-theme.css" rel="stylesheet">
@@ -9,25 +12,135 @@
         <!--Bootstrap JS & Jqeury-->
 		<script src="js/jquery-2.1.0.js"></script>
         <script src="js/bootstrap.js"> </script>
+        <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700' rel='stylesheet' type='text/css'>
         <style>
+        #body{
+            margin:0;
+        }
+
             #header{
+                width:100%;
+                position: fixed;
                 margin:0px;
-                background-color:black;
+                background: rgba(204, 221, 238, .3);
                 color:white;
+                display: inline-block;
+                vertical-align: middle;
+                height: 70px;
             }
+
+            #header
+
+            #title{
+                padding-bottom: 50px;
+            }
+
+            #headername{
+                float: left;
+                display: inline-block;
+                width: 90%;
+                padding-left: 30px;
+                margin-top: -10px;
+            }
+
+            #learnmore{
+                display: inline-block;
+                float: right;
+                padding: 17px;
+            }
+
+            #header > p{
+                display: inline-block;
+                float: right;
+                padding-top: 10px;
+                padding-right: 50px;
+            }
+
+            h4{
+                font-family: 'Lato', sans-serif;
+                font-weight: 100;
+            }
+
             #front{
-                height:550px;
-                padding-top:70px;
+                top: 0px;
+                height:100vh;
+                min-height: 800px;
+                width:100%;
+                padding-top:90px;
             }
+
+            h1{
+                font-family: 'Lato', sans-serif;
+                font-weight: 300;
+                font-size:60px;
+                color: black;
+                display: inline-block;
+                line-height: 60px;
+                vertical-align: middle;
+                padding-left: 10px;
+                padding-right: 20px;
+            }
+
+            h3{
+                font-family: 'Lato', sans-serif;
+                font-weight: 300;
+                font-size: 30px;
+                color: black;
+            }
+
+            h3 a{color:#223344;}    
+
+            #front em {
+                color: #4477bb;
+                text-decoration: none;
+            }
+
             #what{
-                height:700px;
+                height:100vh;
+                min-height: 900px;
                 padding-top:20px;
-                background-color:grey;
+                background-color: #ff4422;
+                padding-top: 100px;
             }
             #how{
-                height: 500px;
+                height: 100vh;
+                min-height: 800px;
                 padding-top:40px;
+                background-color: #88aadd;
             }
+            #why{
+                height: 100vh;
+                min-height: 850px;
+                margin-top: 40px;
+                background-color: #C4D3EB;
+            }
+            #signup{
+                height:100vh;
+                min-height: 800px;
+                margin-top:40px;
+            }
+            #info{
+                width:40%;
+                margin: 0 auto;
+            }
+            #left{
+                padding-top: 50px;
+                position: relative;
+                display: inline-block;
+                width: 30%;
+                float: left;
+                margin: 0 auto;
+            }
+            #right{
+                position: relative;
+                padding-top: 20px;
+                display: inline-block;
+                width: 60%;
+                float: left;
+                padding-left: 30%;
+                text-align: left;
+            }
+
 
         </style>
 
@@ -35,53 +148,112 @@
 
     <body>
             <!--what is this?-->
-            <div id="header" class="row">
-                <h4 class="text-center">header</h4>
+            <div id="header">
+                <div id="learnmore">
+                <p><a class="btn btn-primary btn-large" href="#signup"> Sign up &raquo; </a></p>
+                </div>
+                <div id="headername">
+                    
+                </div>
             </div>
             <div id="front">
-                <div class="container">
                     <div class="row text-center">
-                        <font size="15">swiggly</font>
+                        <img src="img/swigglylogo.png" height="100px"><h1>swiggly</h1><br><br>
                     </div>
                     <div class="row text-center">
-                        <h3>Crowdshipping that works</h3>
+                        <div id="info"><h3>Crowdshipping that <font color="#4477bb">works</font>.</h3><br><br></div>
                     </div>
                     <div id="video" class="row text-center">
                         <img src="http://placehold.it/600x300/000000/ffffff&text=video">
                     </div>
+                    <div class="row text-center" style="margin:50px">
+                        <p><a class="btn btn-primary btn-large" href="#signup">Sign up &raquo;</a></p>
+                    </div>
                 </div>
             </div>
+
+
             <div id="what">
                 <div class="container">
+                    <div id="title">
                     <div class="row text-center">
-                        <u style="color:white;"><h3 style="color:white;">What we do</h3></u>
+                        <h1 style="color:white;">What We Do</h1>
                     </div>
+                    </div>
+
                     <div class="row text-center">
-                        <h4 style="color:white;">
-                        Swigly aspires to bring reliable, same-day delivery at a price
-                        range that was previously impossible.
-                        </h4>
+
+                        <div id="left">
                         <img src="http://placehold.it/600x200/000000/ffffff&text=reliable-sameday-cheap">
+                        </div>
+                        <div id="right">
+                        <h3 style="color:white;">
+                        Swiggly aspires to bring reliable, same-day delivery at a price
+                        range that was previously impossible.
+                        </h3>
+                        <br>
+                        <h3><a href="">Compare rates ></a></h3>
+                        </div>
                     </div>
+                    
                     <div class="row text-center" style="padding-top:30px">
-                        <h4 style="color:white;">
-                        We do this by matching your package with somebody in your area
-                        who happens to be traveling there already.</h4>
+                    <div id="left">
                         <img src="http://placehold.it/600x200/000000/ffffff&text=matched">
                     </div>
-               </div>
+                    <div id="right">
+                        <h3 style="color:white;">
+                        We do this by matching your package with somebody in your area
+                        who happens to be traveling there already.</h3>
+                        <br>
+                        <h3><a href="#how">Learn about the process ></a></h3>
+                        </div>
+                    </div>                
+                    </div>
             </div>
+
+
             <div id="how">
+            <section id="how">
                 <div class="container">
                     <div class="row text-center">
-                        <u><h3>The Process</h3></u>
-                    </div>
+                        <h1>The Process</h1>
+                    </div><br><br>
                     <div class="row text-center">
-                        ...coming soon!
+                        <h3>Describe your package and choose delivery date.</h3><br><br>
+                        <h3>Nearby couriers bid for your package.</h3><br><br>
+                        <h3>Chat/call your courier to make flexible arrangements.</h3></br><br>
+                        <h3>You and your courier will exchange payment and feedback <br>after the recipient confirms delivery.</h3>
+                    </div>
+                </div>
+            </section></div>
+
+            <div id="why">
+            <section id="why">
+                <div class="container" style="padding:50px;">
+                    <div class="row text-center">
+                        <h1>A Preview...</h1>
+                    </div><br><br>
+                    <div class="row text-center">
+                        <img src="img/preview.png">
+                    </div>
+                </div>
+            </section></div>
+
+            <div id="signup">
+                <section id="signup">
+                <div class="container">
+                    <div class="row text-center">
+                        <h1>Sign up for Swiggly</h1>
+                    </div><br><br>
+                    <div class="row text-center">
                     </div>
                 </div>
 
+            </section>
             </div>
+                
+ 
+            
         </body>
 </html>
 
