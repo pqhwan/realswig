@@ -11,25 +11,36 @@ function startService(route, handlers){
     //first responder to request
     function onRequest(request, response){
         var pathname = url.parse(request.url).pathname;
-				console.log('---new request'.rainbow);
+		console.log('---new request'.rainbow);
 
-				//Takes care of requests for files under css/ and js/
-                //if pathname looks like /js/~ or /css/~ 
-				//TODO AND it does not uses any more slashes from thereon
-				//AND the path it asks for is real
-				if( /^\/(img|js|css)\//.test(pathname) && fs.existsSync(pathname.slice(1))){
-					console.log('sending asset: '.green+pathname.slice(1).green);
+                
+        //TODO to be changed
+        //Takes care of requests for files under css/ and js/
+        //if pathname looks like /js/~ or /css/~ 
+        //TODO AND it does not uses any more slashes from thereon
+        //AND the path it asks for is real
+        if(fs.existsSync(pathname.slice(1))){
+            var mimetype;
+            if(/^\/js\//.test(pathname))
+                mimetype='text/javascript';
+            else if(/^\/css\//.test(pathname))
+                mimetype='text/css';
+            else if(/^\/img\//.test(pathname)){
+                mimetype='image/';
+                if(/png$/.test(pathname)){
+                    mimetype=mimetype+'png';
+                }
+                if(/svg$/.test(pathname)){
+                    mimetype=mimetype+'svg+xml';
+                }
+            } else return;
 
-                    var mimetype = pathname.match(/(img|js|css)/)[0];
-					//var mimetype = /css$/.test(pathname)? 'css':'javascript';
-					response.writeHead(200,{'Content-Type':'text/'+mimetype});
-					//TODO WARNING--synchronous method--possible bottlneck
-					response.write(fs.readFileSync(pathname.slice(1)));
-					response.end();
-					return;
-				} 
-                 
-
+            response.writeHead(200,{'Content-Type':mimetype});
+            //TODO WARNING--synchronous method--possible bottlneck
+            response.write(fs.readFileSync(pathname.slice(1)));
+            response.end();
+            return;
+        }
         //for requests not for CSS & JS dependency files
         route(handlers, pathname, response);
     }
