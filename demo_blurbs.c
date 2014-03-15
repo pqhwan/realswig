@@ -38,7 +38,7 @@ The only way shippers will consider our service (or rather, your service)
 
 "The only way to convince shippers not only that our service (or if I may, your service)
     is an option, but also that it is immensely cheaper, faster, and nontheless
-    reliable"
+    ireliable"
 
 
 
