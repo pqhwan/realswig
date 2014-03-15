@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>Swiggly - People Powered Shipping</title>
+
+		<!-- Bootstrap CSS here -->
+		<link href="css/bootstrap.css" rel="stylesheet" />
+		<link href="css/bootstrap-theme.css" rel="stylesheet">
+    	
+        <!--Bootstrap JS & Jqeury-->
+		<script src="js/jquery-2.1.0.js"></script>
+        <script src="js/bootstrap.js"> </script>
+        <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700' rel='stylesheet' type='text/css'>
+
+        <style>
+        #body{
+            margin:0;
+        }
+
+            #header{
+                width:100%;
+                position: fixed;
+                margin:0px;
+                background: rgba(204, 221, 238, .3);
+                color:white;
+                display: inline-block;
+                vertical-align: middle;
+                height: 70px;
+            }
+
+            #title{
+                padding-bottom: 50px;
+            }
+
+            #headername{
+                float: left;
+                display: inline-block;
+                width: 90%;
+                padding-left: 30px;
+                margin-top: -10px;
+            }
+
+            #learnmore{
+                display: inline-block;
+                float: right;
+                padding: 17px;
+            }
+
+            #header > p{
+                display: inline-block;
+                float: right;
+                padding-top: 10px;
+                padding-right: 50px;
+            }
+
+            h4{
+                font-family: 'Lato', sans-serif;
+                font-weight: 100;
+            }
+
+            #signup{
+                top: 0px;
+                height:100vh;
+                min-height: 800px;
+                width:100%;
+                padding-top:90px;
+            }
+            #more{
+                color:black;
+                background-color:#7698D5;
+                top:0px;
+                height:100vh;
+                min-height:800px;
+                width:100%;
+                padding-top:90px;
+            }
+            #why{
+                color:white;
+                background-color:rgb(220,51,7);
+                top:0px;
+                height:100vh;
+                min-height:800px;
+                width:100%;
+                padding-top:90px;
+            }
+
+            h1{
+                font-family: 'Lato', sans-serif;
+                font-weight: 300;
+                font-size:60px;
+                color: black;
+                display: inline-block;
+                line-height: 60px;
+                vertical-align: middle;
+                padding-left: 10px;
+                padding-right: 20px;
+            }
+            h2{
+                font-family:'Lato',sans-serif;
+            }
+
+            h3{
+                font-family: 'Lato', sans-serif;
+                font-weight: 300;
+                font-size: 30px;
+                color: black;
+            }
+
+            h3 a{color:#223344;}    
+
+            #signup em {
+                color: #4477bb;
+                text-decoration: none;
+            }
+
+            #pitch{
+                height:100vh;
+                min-height: 900px;
+                padding-top: 10vh;
+                background-color: #1A2634;
+            }
+
+            #info{
+                width:40%;
+                margin: 0 auto;
+            }
+
+            #left{
+                padding-top: 50px;
+                position: relative;
+                display: inline-block;
+                width: 30%;
+                float: left;
+                margin: 0 auto;
+            }
+            #right{
+                position: relative;
+                padding-top: 20px;
+                display: inline-block;
+                width: 60%;
+                float: left;
+                padding-left: 30%;
+                text-align: left;
+            }
+            /*svg colors*/
+            .svg{
+                margin-left:10px;
+                margin-right:10px;
+            }
+            .pitch{
+                width:80px;
+                height:80px;
+                fill:#F52B1C;
+            }
+            .more{
+                margin-top:30px;
+                width:130px;
+                height:130px;
+            }
+            /*city names*/
+            #cities{
+                color:#F52B1C;
+                padding-top:5vh;
+                padding-bottom:5vh;
+            }
+            .mbtn{
+                background-color:transparent;
+                border:1px solid;
+                color:black;
+            }
+            .mbtn:hover{
+                background-color:#F52B1c;
+                border:1px solid;
+                color:white;
+            }
+            .wbtn{
+                background-color: transparent;
+                color:white;
+                border:1px solid;
+                border-color:white;
+                
+                margin-right:20px;
+            }
+            .wbtn:hover{
+                color:#F52B1c;
+                border-color:#F52B1c;
+            }
+
+
+        </style>
+
+    </head>
+
+    <body>
+            <!--1:Video-->
+
+            <!--2:process-->
+            <!--3:security-->
+            <!--4:Couriers-->
+           <div id="pitch">
+               <div class="container">
+                   <div class="row text-center">
+                    </div>
+                    <div class="row text-center">
+                        <h1 style="color:white;">
+                            People spend over $15 billion every year
+                            to ship things along Northeastern U.S.
+                        </h1>
+                    </div>
+                    <div id="cities" class="row text-center">
+                        <img src="img/pin7.svg" class="svg pitch">
+                        <img src="img/pin7.svg" class="svg pitch">
+                        <img src="img/pin7.svg" class="svg pitch">
+                        <img src="img/pin7.svg" class="svg pitch">
+                        <img src="img/pin7.svg" class="svg pitch">
+                    </div>
+                    <!--
+                    <div id="cities"class="row">
+                        <div class="col-md-2 text-center">
+                            <img src="img/pin7.svg" class="svg pitch"><br>
+                            <h2>DC</h2>
+                        </div>
+                        <div class="col-md-2 text-center">
+                            <img src="img/pin7.svg" class="svg pitch"><br>
+                            <h2>Baltimore</h2>
+                        </div>
+                        <div class="col-md-2 text-center">
+                            <img src="img/pin7.svg" class="svg pitch"><br>
+                            <h2>Philly</h2>
+                        </div>
+                        <div class="col-md-2 text-center">
+                            <img src="img/pin7.svg" class="svg pitch"><br>
+                            <h2>NYC</h2>
+                        </div>
+                        <div class="col-md-2 text-center">
+                            <img src="img/pin7.svg" class="svg pitch">
+                            <h2>Boston</h2>
+                        </div>
+                    </div>-->
+
+                    <div class="row text-center">
+                        <h1 style="color:white;">We'd like to turn some of that 
+                            into <font color="#f52b1c">your </font>
+                            travel fare/gas money.</h1>
+                    </div>
+                    <div class="row" style="margin-top:50px;">
+                        <div class="col-md-4 col-md-offset-4 text-center">
+                            <button type="button" class="btn btn-lg wbtn">
+                                Learn More
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="more">
+                <div class="container">
+                    <div class="row text-center">
+                        <h1>What?</h1>
+                    </div>
+                    <div class="row text-center">
+                        <h2>
+                            In today's world, wherever you are sending your package,<br>
+                            there will always be someone in your area<br>
+                            who is already traveling to the same destination.
+                        </h2><br><br>
+                    </div>
+                    <div class="row text-center">
+                        <img src="img/road18.svg" class="svg more">
+                        <img src="img/plus32.svg" class="svg more" style="width:60px;height:60px;">
+                        <img src="img/box39.svg" class="svg more">
+                        <br><br><br>
+                    </div>
+                    <div class="row text-center">
+                        <h2>
+                            We are developing the technology, the legal foundation,<br>
+                            and the secure protocol that you will need to<br>
+                            find and deliver packages with ease and security.
+                        </h2><br><br>
+                    </div>
+                    <div class="row text-center">
+                        <img src="img/cellphone5.svg" class="svg more">
+                        <img src="img/law.svg" class="svg more">
+                        <img src="img/professor5.svg" class="svg more">
+                    </div>
+                </div>
+            </div>
+
+            <div id="why">
+                <div class="container">
+                    <div class="row text-center">
+                        <h1 style="color:white;">Why?</h1>
+                    </div>
+                    <div class="row text-center">
+                        <h2>
+                            We are going against one of the most established
+                            business models on this planet.<br>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+            <!--
+            We are going against one of the most established business
+            models on this planet.
+            But we believe that the traditional model can be improved
+            to benefit you more.
+            Same day shipping will become the new norm for intercity delivery.
+            Travel cost for most people will decrease by more than half.
+            -->
+
+                <!--
+                <div class="row">
+                    <div class="col-md-5 col-md-offset-1">
+                        <div class="row text-center">
+                            <img src="img/transport3.svg" class="svg more">
+                        </div>
+                        <div class="row text-center">
+                            <img src="img/flying7.svg" class="svg more">
+                        </div>
+                        <div class="row text-center">
+                            <img src="img/transportation1.svg" class="svg more">
+                        </div>
+                        <div class="row text-center">
+                            <img src="img/car80.svg" class="svg more">
+                        </div>
+                    </div>
+                    <div class="col-md-6" style="width:40vw;">
+                        <div class="row">
+                            <h2>
+                                In today's world, wherever you are sending a package,
+                                there will always be someone in your area who is
+                                going to the same destination.
+                            </h2>
+                        </div>
+                        <div class="row">
+                            <h2>
+                                Those of us who gathered to build Swiggly
+                                all frequently had occasions to send packages.<br><br>
+                                So we wondered: Why can't we just send them along
+                                with someone who's already going there?<br>
+                            </h2>
+                        </div>
+                        <div class="row">
+                            <h2>
+
+
+                            </h2>
+                        </div>
+                        <div class="row">
+                            <h2>
+                            We are developing the technology, the legal foundation,
+                            and the secure procedure that will be needed for you to 
+                            find and deliver packages with ease and security.
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="padding-top:50px;">
+                    <div class="col-md-4 col-md-offset-4 text-center">
+                        <img src="img/transport3.svg" class="svg more">
+                        <img src="img/flying7.svg" class="svg more">
+                        <img src="img/transportation1.svg" class="svg more">
+                        <img src="img/car80.svg" class="svg more">
+                    </div>
+                </div>
+                -->
+
+            <!-- think of all the modes of transporations out there-->
+            <!-- we live in an interconnected world- which means that
+
+            whereever you want to send your package, there will always
+            be somebody who's going there.
+
+            Whereever you are going, there will always be somone in your
+            area who wanted to send a package there.
+            so why has this not happened yet? because there aren't
+            enough of us gathered just yet. 
+            Our dream is to build a system that make you more money 
+            than it costs you to travel
+            
+            Our dream is to build a system under which people can
+            drive and travel at effectively no cost.
+            In order for package senders to consider us an option,
+            we must join forces. 
+            -->
+            <!--5:senders-->
+            <!--6:signup-->
+            <div id="signup">
+                <div class="row text-center">
+                    <img src="img/swigglylogo2.png" height="100px"><h1>swiggly</h1><br><br>
+                </div>
+
+                <div class="row text-center">
+                    <div id="info"><h3>Crowdshipping that <font color="#F52B1C">works</font>.</h3><br><br></div>
+                </div>
+
+                <div class="container">
+                    <form role="form">
+                        <div class="row">
+                        <div class="form-group col-md-4 col-md-offset-4 text-center">
+                            <label for="email"><h2>Email</h2></label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter email">
+                        </div>
+                        </div>
+    
+                        <div class="row">
+                        <div class="form-group col-md-4 col-md-offset-4 text-center">
+                            <label for="exampleInputPassword1"><h2>Zipcode</h2></label>
+                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter zipcode">
+                        </div>
+                        </div>
+                        <div class="row" style="margin-top:50px;">
+                            <div class="col-md-4 col-md-offset-4 text-center">
+                                <button type="submit" class="btn btn-lg mbtn">Request Early Access</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+
+            
+        </body>
+        <script>
+         /*
+         * Replace all SVG images with inline SVG
+         */
+         jQuery('img.svg').each(function(){
+                console.log('got');
+                var $img = jQuery(this);
+                var imgID = $img.attr('id');
+                var imgClass = $img.attr('class');
+                var imgURL = $img.attr('src');
+
+                jQuery.get(imgURL, function(data) {
+                    // Get the SVG tag, ignore the rest
+                    var $svg = jQuery(data).find('svg');
+
+                    // Add replaced image's ID to the new SVG
+                    if(typeof imgID !== 'undefined') {
+                        $svg = $svg.attr('id', imgID);
+                    }
+                    // Add replaced image's classes to the new SVG
+                    if(typeof imgClass !== 'undefined') {
+                        $svg = $svg.attr('class', imgClass+' replaced-svg');
+                    }
+
+                    // Remove any invalid XML tags as per http://validator.w3.org
+                    $svg = $svg.removeAttr('xmlns:a');
+
+                    // Replace image with new SVG
+                    $img.replaceWith($svg);
+
+                }, 'xml');
+
+            });
+        </script>
+</html>
+
+
