@@ -1,3 +1,57 @@
+There exists a perfect match of supply and demand between
+those who need things shipped and those who find travel
+expenses burdensome.
+
+When was the last time you sent something? 
+
+Because no matter how big your package is, where it goes,
+        or what time it is now, there's always somebody
+        going there right now.
+
+
+So why did nobody pay you for taking that long, expensive
+ride up the coast last weekend?
+
+"We are going against some of the most established corporations
+on this planet--why?"
+
+"because we think the traditional courier services are
+outdated."
+
+"we want to build a service that will"
+
+"give everyday people access to better, faster and cheaper courier services"
+     
+"and also give them ways to travel at effectively zero cost."
+you can now pay for your entire trip by simply 
+
+"So how do we do it? What we need is you: normal people who travel\
+between cities occasionally, or maybe frequently. 
+Once we know"
+
+
+The only way we can 
+convince shippers that not only 
+
+The only way shippers will consider our service (or rather, your service)
+    an option
+
+"The only way to convince shippers not only that our service (or if I may, your service)
+    is an option, but also that it is immensely cheaper, faster, and nontheless
+    reliable"
+
+
+
+
+
+
+
+
+
+
+
+
+
 SENDERS
 
     [finding a driver]

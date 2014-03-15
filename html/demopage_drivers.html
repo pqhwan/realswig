@@ -59,10 +59,18 @@
                 font-weight: 100;
             }
 
-            #front{
+            #signup{
                 top: 0px;
                 height:100vh;
                 min-height: 800px;
+                width:100%;
+                padding-top:90px;
+            }
+            #more{
+                background-color:#7698D5;
+                top:0px;
+                height:100vh;
+                min-height:800px;
                 width:100%;
                 padding-top:90px;
             }
@@ -88,7 +96,7 @@
 
             h3 a{color:#223344;}    
 
-            #front em {
+            #signup em {
                 color: #4477bb;
                 text-decoration: none;
             }
@@ -99,15 +107,12 @@
                 padding-top: 40px;
                 background-color: #1A2634;
             }
-           #signup{
-                height:100vh;
-                min-height: 800px;
-                margin-top:40px;
-            }
+
             #info{
                 width:40%;
                 margin: 0 auto;
             }
+
             #left{
                 padding-top: 50px;
                 position: relative;
@@ -127,18 +132,18 @@
             }
 
             .svg{
-                fill:#F52B1C;
+                fill:#F77369;
                 height:80px;
                 width:80px;
                 margin-left:10px;
                 margin-right:10px;
             }
             #cities{
-                color:#F52B1C;
+                color:#F77369;
                 padding-left:240px;
                 padding-right:100px;
-                padding-top:15vh;
-                padding-bottom:15vh;
+                padding-top:10vh;
+                padding-bottom:10vh;
             }
             .mbtn{
                 background-color:transparent;
@@ -150,6 +155,19 @@
                 border:1px solid;
                 color:white;
             }
+            .wbtn{
+                background-color: transparent;
+                color:white;
+                border:1px solid;
+                border-color:white;
+                
+                margin-right:20px;
+            }
+            .wbtn:hover{
+                color:#F52B1c;
+                border-color:#F52B1c;
+            }
+
 
         </style>
 
@@ -157,7 +175,6 @@
 
     <body>
             <!--what is this?-->
-            
             <div id="pitch">
                 <div class="container">
                         <div class="row text-center">
@@ -181,7 +198,7 @@
                             </div>
                             <div class="col-md-2 text-center">
                                 <img src="img/pin7.svg" class="svg"><br>
-                                <h2>NY</h2>
+                                <h2>NYC</h2>
                             </div>
                             <div class="col-md-2 text-center">
                                 <img src="img/pin7.svg" class="svg">
@@ -189,15 +206,26 @@
                             </div>
                         </div>
                         <div class="row text-center">
-                            <h1 style="color:white;">We'd like to turn some of that into your gas money.</h1>
+                            <h1 style="color:white;">We'd like to turn some of that into your 
+                                travel fare/gas money.</h1>
                         </div>
+                        <div class="row" style="margin-top:50px;">
+                            <div class="col-md-4 col-md-offset-4 text-center">
+                                <button type="button" class="btn btn-lg wbtn">
+                                    Learn More
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </div>
+            <div id="more">
             </div>
 
 
-            <div id="front">
+            <div id="signup">
                 <div class="row text-center">
-                    <img src="img/swigglylogo.png" height="100px"><h1>swiggly</h1><br><br>
+                    <img src="img/swigglylogo2.png" height="100px"><h1>swiggly</h1><br><br>
                 </div>
 
                 <div class="row text-center">

@@ -20,6 +20,7 @@ function startService(route, handlers){
         //TODO AND it does not uses any more slashes from thereon
         //AND the path it asks for is real
         if(fs.existsSync(pathname.slice(1))){
+            console.log("sending asset: ".green+pathname.green);
             var mimetype;
             if(/^\/js\//.test(pathname))
                 mimetype='text/javascript';
