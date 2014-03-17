@@ -17,10 +17,10 @@ function register(response, postData){
     var parsed = querystring.parse(postData);
 
     //TODO write into file emails.txt 
-    fs.appendFile('data/signups.txt',JSON.stringify(parsed)+'\n',function(err){
+    fs.appendFile('signups.txt',JSON.stringify(parsed)+'\n',function(err){
         if (err) throw err;
     });
-    fs.appendFile('data/emails.txt',parsed.email+'\n', function(err){
+    fs.appendFile('emails.txt',parsed.email+'\n', function(err){
         if (err) throw err;
     });
 
