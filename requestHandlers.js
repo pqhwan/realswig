@@ -13,6 +13,8 @@ function front(response){
 
 function register(response){
     //for handling form POST upload on registeration
+    //TODO write into file emails.txt 
+
     response.writeHead(200,{'Content-Type':'text/plain'});
     response.write("thank you for registering!");
     response.end();

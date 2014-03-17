@@ -6,6 +6,8 @@ var http = require('http');
 var url = require('url');
 var fs = require('fs');
 
+var express = require('express');
+
 function startService(route, handlers){
 
     //first responder to request
@@ -42,6 +44,11 @@ function startService(route, handlers){
             response.end();
             return;
         }
+
+        if(pathname=='/register'){
+            console.log(request)
+        }
+
         //for requests not for CSS & JS dependency files
         route(handlers, pathname, response);
     }
