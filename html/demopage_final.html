@@ -433,45 +433,84 @@
                 <div class="row text-center">
                     <img src="img/swigglylogo2.png" height="100px"><h1>swiggly</h1><br><br>
                 </div>
-
                 <div class="row text-center">
                     <div id="info"><h3>Crowdshipping that <font color="#F52B1C">works</font>.</h3><br><br></div>
                 </div>
                 <div class="container">
-                    <form method="POST" action="/register" role="form" id="signup-form">
-
+                    <form method="post" action="/register" role="form" id="signup-form">
                         <div class="row">
                             <div class="form-group col-md-4 col-md-offset-4 text-center">
                                 <label for="email"><h2>Email</h2></label>
-                                <input type="email" class="form-control" id="email" placeholder="Enter email">
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
                             </div>
                         </div>
     
                         <div class="row">
                             <div class="form-group col-md-4 col-md-offset-4 text-center">
-                                <label for="exampleInputPassword1"><h2>Zipcode</h2></label>
-                                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter zipcode">
+                                <label for="zipcode"><h2>Zipcode</h2></label>
+                                <input type="text" class="form-control" id="zipcode" name="zipcode" placeholder="Enter zipcode">
                             </div>
                         </div>
 
+                        <div class="form-group col-md-4 col-md-offset-4 text-center"
+                            style="border:solid grey 1px">
+                            <p><b>Tell us where you travel to/from:</p><br>
+                                <div class="col-md-6" style="padding-left:100px;">
+                                <div class="row">
+                                    <input type="checkbox" name="dc" value="true"></input>
+                                </div>
+                                <div class="row">
+                                    <input type="checkbox" name="baltimore" value="true"></input>
+                                </div>
+                                <div class="row">
+                                    <input type="checkbox" name="philly" value="true"></input>
+                                </div>
+                                <div class="row">
+                                    <input type="checkbox" name="nyc" value="true"></input>
+                                </div>
+                                <div class="row">
+                                    <input type="checkbox" name="boston" value="true"></input>
+                                </div>
+                            </div>
+                            <div class="col-md-6" style="padding-right:100px">
+                                <div class="row">DC</div>
+                                <div class="row">Baltimore</div>
+                                <div class="row">Philadelphia</div>
+                                <div class="row">NYC</div>
+                                <div class="row">Boston</div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4 col-md-offset-4 text-center">
+                            <p><b>How frequently?</b></p>
+                            <select class="form-control" name="freq">
+                                <option value="daily">daily</option>
+                                <option value="weekly">weekly</option>
+                                <option value="2weekly">more than twice a week</option>
+                                <option value="monthly">monthly</option>
+                                <option value="2montly">more than twice a month</option>
+                            </select>
+                        </div>
+                       
+
+                        <!--
                         <div class="row">
                             <div class="form-group col-md-4 col-md-offset-4 text-center">
                                 <p>Tell us where you travel to/from:</p><br>
                                 <div class="col-md-6" style="padding-left:100px">
                                     <div class="row">
-                                        <input type="checkbox" id="dc"></input>
+                                        <input type="checkbox" name="dc"></input>
                                     </div>
                                     <div class="row">
-                                        <input type="checkbox" id="baltimore"></input>
+                                        <input type="checkbox" name="baltimore" value="true"></input>
                                     </div>
                                     <div class="row">
-                                        <input type="checkbox" id="philly"></input>
+                                        <input type="checkbox" name="philly"></input>
                                     </div>
                                     <div class="row">
-                                        <input type="checkbox" id="nyc"></input>
+                                        <input type="checkbox" name="nyc"></input>
                                     </div>
                                     <div class="row">
-                                        <input type="checkbox" id="boston"></input>
+                                        <input type="checkbox" name="boston"></input>
                                     </div>
                                 </div>
                                 <div class="col-md-6" style="padding-right:100px">
@@ -483,6 +522,7 @@
                                 </div>
                             </div>
                         </div>
+                        -->
 
                         <div class="row" style="margin-top:50px;">
                             <div class="col-md-4 col-md-offset-4 text-center">

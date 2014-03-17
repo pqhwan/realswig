@@ -1,10 +1,10 @@
 var colors = require('colors');
 
-function route(handlers, pathname, response){
+function route(handlers, pathname, response, postData){
     if(typeof(handlers[pathname]) == 'function'){
         //handler found
         console.log('handler found for path:'.green + pathname.green);
-        handlers[pathname](response);
+        handlers[pathname](response, postData);
 
     } else{
         //404 page not found

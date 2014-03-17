@@ -43,12 +43,19 @@ function startService(route, handlers){
             return;
         }
 
-        if(pathname=='/register'){
-            console.log(request)
-        }
+        //oh this may be a legit page request or a POST
+        var postData= '';
+        request.setEncoding('utf8');
+        request.addListener('data', function(postDataChunk){
+            postData+=postDataChunk;
+            console.log('post data received');
+        });
+
+        request.addListener('end',function(){
+            route(handlers, pathname, response, postData);
+        });
 
         //for requests not for CSS & JS dependency files
-        route(handlers, pathname, response);
     }
 
     port = Number(process.env.PORT || 9001);

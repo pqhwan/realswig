@@ -1,7 +1,8 @@
-var fs = require('fs');
+var fs = require('fs'),
+    querystring = require('querystring');
 
 
-function front(response){
+function front(response, postData){
     //for root dir GET request
     //test page transfer
     fs.readFile('html/demopage_final.html', function(err, data){
@@ -11,9 +12,17 @@ function front(response){
     });
 }
 
-function register(response){
+function register(response, postData){
     //for handling form POST upload on registeration
+    var parsed = querystring.parse(postData);
+
     //TODO write into file emails.txt 
+    fs.appendFile('data/signups.txt',JSON.stringify(parsed)+'\n',function(err){
+        if (err) throw err;
+    });
+    fs.appendFile('data/emails.txt',parsed.email+'\n', function(err){
+        if (err) throw err;
+    });
 
     response.writeHead(200,{'Content-Type':'text/plain'});
     response.write("thank you for registering!");
