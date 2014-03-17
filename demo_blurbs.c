@@ -1,4 +1,7 @@
-
+Starting FedEx same day costs: $200+. 
+UPS/FedEx package sent by 8 a.m. tomorrow: $50-60+, scaling with distance and weight.
+With Swiggly, prices are not predetermined by package weight and distance.
+Instead, nearby couriers bid to ensure the lowest market prices with quick delivery.
 
 Panels
 1-video
