@@ -6,7 +6,6 @@ var http = require('http');
 var url = require('url');
 var fs = require('fs');
 
-var express = require('express');
 
 function startService(route, handlers){
 
@@ -14,7 +13,6 @@ function startService(route, handlers){
     function onRequest(request, response){
         var pathname = url.parse(request.url).pathname;
 		console.log('---new request'.rainbow);
-
                 
         //TODO to be changed
         //Takes care of requests for files under css/ and js/
