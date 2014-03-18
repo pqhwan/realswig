@@ -5,7 +5,7 @@ var fs = require('fs'),
 function front(response, postData){
     //for root dir GET request
     //test page transfer
-    fs.readFile('html/demopage_final.html', function(err, data){
+    fs.readFile('html/demopage_responsive.html', function(err, data){
         response.writeHead(200,{'Content-Type':'text/html'});
         response.write(data);
         response.end();
