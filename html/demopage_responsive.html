@@ -31,7 +31,7 @@
             h2{
                 color:black;
             }
-            
+
             /*nav*/
             #nav{
                 width:100%;
@@ -39,14 +39,25 @@
                 background:rgba(204,221,238,.3);
                 display:block;
                 vertical-align:middle;
-                height: 70px;
+                height: 90px;
             }
             #navlogo{
                 float:left;
             }
-            #navtosignup{
+            #navlogo img{
+                height:90px;
+            }
+            #nav button{
+                width:100px;
                 float:right;
-                margin-top:10px;
+                background-color:transparent;
+                border:2px solid;
+                color:white;
+                margin-top:23px;
+                padding-left:14px;
+            }
+            #nav button:hover{
+                background-color:#1A2634;
             }
 
             .panel{
@@ -84,7 +95,7 @@
             }
             #top button:hover{
                 color:white;
-                background-color:#F52B1C;
+                background-color:#1A2634;
             }
             #video{
                 margin-top:20px;
@@ -249,14 +260,12 @@
         </style>
     </head>
     <body>
-        <div id="nav" style="display:none">
+        <div id="nav">
             <div class="container">
                 <a href="/" id="navlogo">
-                    <img src="img/swigglylogo2.png" height="70px">
+                    <img src="img/swigglylogo2.png">
                 </a>
-                <a id="navtosignup"class="btn-primary btn-lg" href="#signup">
-                    Join Us
-                </a>
+                <button class="btn btn-lg" href="#signup">JOIN US</button>
             </div>
         </div>
 
@@ -270,8 +279,7 @@
                 <div id="video" class="row">
                     <iframe src="//player.vimeo.com/video/89009115?badge=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                 </div>
-                <button class="btn btn-lg mbtn" href="#signup">
-                    Join Us
+                <button class="btn btn-lg" href="#signup">JOIN US
                 </button>
             </div>
         </div>
@@ -480,6 +488,19 @@
             }, 'xml');
 
         });
+
+        function hairDresser(){
+            var topHeight = $('#top').height()
+            console.log($(this).scrollTop());
+            if ($(this).scrollTop() > topHeight && !$("#nav").is(':visible')){
+                $('#nav').slideDown('slow');
+            } else if($(this).scrollTop() <= topHeight && $('#nav').is(':visible')){
+                $('#nav').hide();
+            }
+        }
+
+        $(window).on('scroll', hairDresser);
+        $(document).ready(hairDresser);
 
         window.viewportUnitsBuggyfill.init();
     </script>
