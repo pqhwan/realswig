@@ -34,7 +34,7 @@ function startService(route, handlers){
                 if(/svg$/.test(pathname)){
                     mimetype=mimetype+'svg+xml';
                 }
-            } else return;
+            } else
 
             response.writeHead(200,{'Content-Type':mimetype});
             //TODO WARNING--synchronous method--possible bottlneck
