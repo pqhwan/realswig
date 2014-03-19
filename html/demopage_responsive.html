@@ -28,6 +28,9 @@
                 font-size:60px;
                 color:black;
             }
+            h2{
+                color:black;
+            }
             
             /*nav*/
             #nav{
@@ -148,7 +151,7 @@
                 }
             }
 
-            /*why*/
+            /*more*/
             #more{
                 height:100vh;
                 width:100%;
@@ -183,6 +186,44 @@
                     height:50px;
                 }
             }
+            
+            /*why*/
+            #why{
+                height:100vh;
+                width:100%;
+                background-color:rgb(220,51,7);
+            }
+
+            #why .svg{
+                height:130px;
+                width:130px;
+                fill:white;
+            }
+            #why .truck{
+                width:50px;
+                height:50px;
+            }
+            #why h1{color:white}
+            #why h2{color:white}
+
+            #why .container{
+                padding-top:5vh;
+            }
+            #why .row{margin-top:1vh;}
+
+            @media (max-width:600px){
+                #why h1{font-size:25px;}
+                #why h2{font-size:13px;}
+                #more .svg{
+                    width:50px;
+                    height:50px;
+                }
+                #more .truck{
+                    width:22px;
+                    height:22px;
+                }
+            }
+
         </style>
     </head>
     <body>
@@ -288,7 +329,6 @@
             </div>
         </div>
 
-        <!--
         <div id="why">
             <div class="container text-center">
                 <div class="row">
@@ -304,11 +344,34 @@
                 </div>
                 <div class="row">
                     <img src="img/factory6.svg" class="svg">
-                    <img src="img/delivery13.svg" class="svg">
+                    <img src="img/delivery13.svg" class="svg truck">
                 </div>
-            </div>
+                <div class="row">
+                    <h2>
+                        We think traditional courier services,
+                        despite their advantages, can be revolutionized
+                        for your benefit.
+                    </h2>
+                </div>
+                <div class="row">
+                    <h2>
+                        For package senders, affordable same-day
+                        shipping will become a norm.
+                    </h2>
+                </div>
+                <div class="row">
+                    <img src="img/today1.svg" class="svg">
+                </div>
+                <div class="row">
+                    <h2>
+                        For the rest of us, traveling costs will be
+                        more than halved.
+                    </h2>
+                </div>
+                <div class="row">
+                    <img src="img/scissors12.svg" class="svg">
+                </div>
         </div>
-        -->
         <div id="but">
         </div>
 
