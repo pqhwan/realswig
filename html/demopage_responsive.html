@@ -287,6 +287,10 @@
             /*signup*/
             #signup{
                 height:100vh;
+                min-height:800px;
+            }
+            #signup .container{
+                margin-top:10px;
             }
             #submitb{
                 border:1px solid black;
@@ -297,6 +301,20 @@
                 color: white;
                 background-color:rgb(220,51,7);
                 border-color:white;
+            }
+            .state-icon{
+                height:24px;
+                width:24px;
+            }
+            .btn-city{
+                font-size:16px;
+                color:black;
+                background-image:none;
+                background-color:white;
+                border:1px solid black;
+            }
+            #signup .form-group{
+                margin-top:6px;
             }
 
         </style>
@@ -515,13 +533,54 @@
                                 <input type="text" class="form-control" id="zipcode" name="zipcode" placeholder="Enter zipcode">
                             </div>
                             <div class="form-group col-md-4 col-md-offset-4">
-                            <span class="button-checkbox">
-                                <button type="button" class="btn btn-primary">
-                                    Boston
-                                </button>
-                                <input type="checkbox" class="hidden" />
-                            </span>
-</div>
+                                <h4><b>Do you travel to/from these cities?</b></h4>
+                                <span class="button-checkbox">
+                                    <button type="button" class="btn btn-city">
+                                        Boston
+                                    </button>
+                                    <input type="checkbox" class="hidden" />
+                                </span>
+                                <span class="button-checkbox">
+                                    <button type="button" class="btn btn-city">
+                                        NYC
+                                    </button>
+                                    <input type="checkbox" class="hidden" />
+                                </span>
+                                <span class="button-checkbox">
+                                    <button type="button" class="btn btn-city">
+                                        Philly
+                                    </button>
+                                    <input type="checkbox" class="hidden" />
+                                </span>
+                            </div>
+                            <div class="form-group col-md-4 col-md-offset-4"
+                                style="margin-top:0;">
+                                <span class="button-checkbox">
+                                    <button type="button" class="btn btn-city">
+                                        Baltimore
+                                    </button>
+                                    <input type="checkbox" class="hidden" />
+                                </span>
+                                <span class="button-checkbox">
+                                    <button type="button" class="btn btn-city">
+                                        DC
+                                    </button>
+                                    <input type="checkbox" class="hidden" />
+                                </span>
+                            </div>
+                            <div class="form-group col-md-2 col-md-offset-5 text-center">
+                                <h4><b>How frequently?</b></h4>
+                                <select class="form-control" name="freq">
+                                    <option value="daily">daily</option>
+                                    <option value="weekly">weekly</option>
+                                    <option value="2weekly">more than twice a week</option>
+                                    <option value="monthly">monthly</option>
+                                    <option value="2montly">more than twice a month</option>
+                                </select>
+                            </div>
+                       
+
+                             
                             <div class="form-group col-md-4 col-md-offset-4">
                                 <button id="submitb"type="submit" class="btn btn-lg">
                                     Request Early Access
@@ -537,7 +596,9 @@
      /*
      * Replace all SVG images with inline SVG
      */
-     jQuery('img.svg').each(function(){
+    function svgfy(){
+        console.log('hello');
+     jQuery('.svg').each(function(){
             var $img = jQuery(this);
             var imgID = $img.attr('id');
             var imgClass = $img.attr('class');
@@ -565,6 +626,7 @@
             }, 'xml');
 
         });
+    }
 
         function hairDresser(){
             var topEnds = $('#top').height();
@@ -585,13 +647,12 @@
                 var $widget = $(this),
                     $button = $widget.find('button'),
                     $checkbox = $widget.find('input:checkbox'),
-                    color = $button.data('color'),
                     settings = {
                         on: {
-                            icon: 'glyphicon glyphicon-check'
+                            icon: 'checked11.svg'
                         },
                         off: {
-                            icon: 'glyphicon glyphicon-unchecked'
+                            icon: 'checkbox3.svg'
                         }
                     };
 
@@ -613,32 +674,29 @@
                     $button.data('state', (isChecked) ? "on" : "off");
 
                     // Set the button's icon
-                    $button.find('.state-icon')
-                        .removeClass()
-                        .addClass('state-icon ' + settings[$button.data('state')].icon);
 
                     // Update the button's color
                     if (isChecked) {
+                        $button.find('.state-icon')
+                            .remove();
+                        $button.prepend('<img class="state-icon" src="img/' + settings[$button.data('state')].icon + '">');
+                        $button.find('.state-icon').attr('stroke','white');
                         $button
-                            .removeClass('btn-default')
-                            .addClass('btn-' + color + ' active');
+                            .addClass('active');
                     }
                     else {
+                        $button.find('.state-icon')
+                            .remove();
+                        $button.prepend('<img class="state-icon" src="img/' + settings[$button.data('state')].icon + '">');
                         $button
-                            .removeClass('btn-' + color + ' active')
-                            .addClass('btn-default');
+                            .removeClass('active')
                     }
+                    svgfy();
                 }
 
                 // Initialization
                 function init() {
-
                     updateDisplay();
-
-                    // Inject the icon if applicable
-                    if ($button.find('.state-icon').length == 0) {
-                        $button.prepend('<i class="state-icon ' + settings[$button.data('state')].icon + '"></i> ');
-                    }
                 }
                 init();
             });
@@ -649,6 +707,7 @@
             $('#nav').hide();
             hairDresser();
             setupCheckboxes();
+            svgfy();
         });
 
 
