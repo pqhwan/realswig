@@ -34,6 +34,7 @@
 
             /*nav*/
             #nav{
+                z-index:9999;
                 width:100%;
                 position:fixed;
                 background:rgba(204,221,238,.3);
@@ -65,7 +66,24 @@
                 padding:0;
                 border-radius:0;
             }
-
+            /*navbar size for mobile*/
+            @media (max-width:600px){
+                #nav{
+                    height:30px;
+                }
+                #navlogo img{
+                    height:30px;
+                }
+                #nav button{
+                    font-size;10px;
+                    padding:0;
+                    margin-top:0;
+                    width:80px;
+                    margin-top:2px;
+                    height:26px;
+                }
+            }   
+ 
             /* top */
             #top{
                 height:100vh;
@@ -93,7 +111,7 @@
                 border:1px solid;
                 color:black;
             }
-            #top button:hover{
+           #top button:hover{
                 color:white;
                 background-color:#1A2634;
             }
