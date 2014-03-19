@@ -32,7 +32,7 @@ function startService(route, handlers){
                     mimetype=mimetype+'png';
                 }
                 if(/svg$/.test(pathname)){
-                    mimetype=mimetype+'svg+xml';
+                    mimetype=mimetype+'xml';
                 }
             } else
 
