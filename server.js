@@ -35,6 +35,7 @@ function startService(route, handlers){
                     mimetype=mimetype+'svg+xml';
                 }
             } else return;
+            console.log('sending mime type: '+mimetype.blue);
 
             response.writeHead(200,{'Content-Type':mimetype});
             //TODO WARNING--synchronous method--possible bottlneck
