@@ -5,11 +5,15 @@
 var http = require('http');
 var url = require('url');
 var fs = require('fs');
+//var pg = require('pg');
 
+
+//TODO WARNING--keep this out
+var dbconn = process.env.DATABASE_URL || "postgres://nodetest:bigswigmoney@localhost/nodetest";
 
 function startService(route, handlers){
 
-    //first responder to request
+   //first responder to request
     function onRequest(request, response){
         var pathname = url.parse(request.url).pathname;
 		console.log('---new request'.rainbow);
@@ -35,7 +39,6 @@ function startService(route, handlers){
                     mimetype=mimetype+'svg+xml';
                 }
             } else return;
-            console.log('sending mime type: '+mimetype.blue);
 
             response.writeHead(200,{'Content-Type':mimetype});
             //TODO WARNING--synchronous method--possible bottlneck
@@ -49,7 +52,6 @@ function startService(route, handlers){
         request.setEncoding('utf8');
         request.addListener('data', function(postDataChunk){
             postData+=postDataChunk;
-            console.log('post data received');
         });
 
         request.addListener('end',function(){

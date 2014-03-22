@@ -22,6 +22,7 @@
   "homepage": "https://github.com/pqhwan/realswig",
   "dependencies": {
     "colors": "~0.6.2",
-    "simplesmtp": "~0.3.23"
+    "simplesmtp": "~0.3.23",
+    "pg": "~2.11.1"
   }
 }
