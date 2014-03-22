@@ -35,7 +35,7 @@ var mailOptions = {
     subject: 'Welcome to Swiggly!',
 
     //contents
-    html: fs.readFileSync('html/registration.html').toString()
+    html: fs.readFileSync('html/confirmation_email.html').toString()
 }
 
 /*-------------------------routes---------------------------*/
@@ -50,6 +50,13 @@ function front(response, postData){
     });
 }
 
+function thanks(response, postData){
+    fs.readFile('html/thank_you.html', function(err,data){
+        response.writeHead(200,{'Content-Type':'text/html'});
+        response.write(data);
+        response.end();
+    });
+}
 
 function register(response, postData){
     //for handling form POST upload on registeration
@@ -68,12 +75,12 @@ function register(response, postData){
     mailOptions.to = parsed.email;
     //send
     smtpTransport.sendMail(mailOptions,function(error,response){
-        if(error) console.error('nodemailer problem', error);
+        if(error) console.error('nodemailer error', error);
     });
 
     //TODO redirect users to something a bit more useful
-    response.writeHead(200,{'Content-Type':'text/plain'});
-    response.write("thank you for registering!");
+    response.writeHead(302,{'Location':'thanks'});
+    response.write("Thank you for registering!");
     response.end();
 }
 
@@ -154,3 +161,4 @@ function storeRegistration(err,client,done,parsed){
 
 exports.front = front;
 exports.register = register;
+exports.thanks = thanks;
