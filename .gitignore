@@ -9,3 +9,6 @@ test.js
 
 #data file
 data
+
+#credential files (dont ask, you)
+creds

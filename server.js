@@ -2,14 +2,10 @@
 // Server startup code
 
 //vanilla node version (all we need for now, plus good for foundation)
-var http = require('http');
-var url = require('url');
-var fs = require('fs');
-//var pg = require('pg');
+var http = require('http'),
+    url = require('url'),
+    fs = require('fs');
 
-
-//TODO WARNING--keep this out
-var dbconn = process.env.DATABASE_URL || "postgres://nodetest:bigswigmoney@localhost/nodetest";
 
 function startService(route, handlers){
 
