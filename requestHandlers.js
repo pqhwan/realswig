@@ -144,6 +144,8 @@ function storeRegistration(err,client,done,parsed){
         //TODO identify possible error types and take appropriate measures: 
         //violation of unique constraint on email
         //violation of not null constraint on 
+        //TODO respond appropriately... do we need response passed down all the way
+        //here?
         if(err)console.error('pgsql error',err);
     });
 }
