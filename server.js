@@ -6,7 +6,6 @@ var http = require('http'),
     url = require('url'),
     fs = require('fs');
 
-
 function startService(route, handlers){
 
    //first responder to request

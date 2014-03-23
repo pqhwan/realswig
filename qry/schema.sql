@@ -12,3 +12,7 @@ create table emails(
                         --twice a year
     confirmed boolean
 )
+
+create table referrals(
+
+)

@@ -88,7 +88,7 @@
                     height:43px;
                 }
             }   
- 
+
             /* top */
             #top{
                 height:100vh;
@@ -99,15 +99,15 @@
             #top img{
                 margin-top:40px;
             }
-            
 
-           /*bigger icon for big screen*/
+
+            /*bigger icon for big screen*/
             @media (max-width: 600px){
                 .logo{
                     height:100px;
                 }
             }
-           
+
             #top h2{
                 font-family:'Lato', sans-serif;
             }
@@ -217,7 +217,7 @@
                     height:50px;
                 }
             }
-            
+
             /*why*/
             #why{
                 height:100vh;
@@ -318,6 +318,12 @@
                 margin-top:6px;
             }
 
+            .required{
+                color:red;
+                font-size:16px;
+                display:none;
+            }
+
         </style>
     </head>
     <body>
@@ -340,7 +346,7 @@
                     <h3>Crowdshipping for gas money</h3>
                 </div>
                 <div id="video" class="row">
-                    <iframe src="//player.vimeo.com/video/89683441?" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    <iframe src="//player.vimeo.com/video/89683441?autoplay=1&api=1" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                 </div>
                 <a href="#pitch" class="btn btn-default btn-lg">
                     Learn more
@@ -353,7 +359,7 @@
                 <div class="row">
                     <h1>
                         People spend billions every year
-                        to ship things along Northeastern U.S.
+                        to ship things along the Northeast.
                     </h1>
                 </div>
 
@@ -396,7 +402,7 @@
                 </div>
                 <div class="row">
                     <h2>
-                        Wherever you're going, chances are
+                        If you are traveling to a major city, chances are
                         that there is a <br>package headed to the same
                         destination.<br>
                         Swiggly matches the two together.
@@ -410,8 +416,8 @@
                 <div class="row">
                     <h2>
                         We provide the technology and
-                        the secure protocol that you 
-                        will need to find, send, and deliver
+                        the secure protocol <br>that you 
+                        will need to find, send, and deliver<br>
                         packages with ease and for profit.
                     </h2>
                 </div>
@@ -478,8 +484,10 @@
                         Q: How can I trust a stranger?
                     </h2>
                     <h3>
-                        A: Every Swiggly user has her mobile number,
-                        email, and credit card number verified.
+                        A: All Swiggly users have their mobile number,
+                        email, and credit card number verified. Also, they are
+                        rated by users like you, making Swiggly a safe and reliable
+                        community.
                     </h3>
                 </div>
                 <div class="row">
@@ -498,7 +506,7 @@
                     <h3>
                         A: Payment will be streamlined through secure major payment 
                         systems such as Paypal, Venmo, and Dwolla. For those who
-                        signed up for early access, there will be no commission. 
+                        signed up for early access, there will be NO COMMISSION.
                     </h3>
                 </div>
                 <div class="row">
@@ -514,25 +522,26 @@
                 </div>
             </div>
         </div>
-            <div id="signup">
-                <div class="container text-center">
-                    <div id="heading" class="row">
-                        <img src="img/swigglylogo2.png" class="logo">
-                        <h1>swiggly</h1>
-                        <h3>Sign up for early access</h3>
+        <div id="signup">
+            <div class="container text-center">
+                <div id="heading" class="row">
+                    <img src="img/swigglylogo2.png" class="logo">
+                    <h1>swiggly</h1>
+                    <h3>Sign up for early access and <b>$0 commission</b></h3>
+                </div>
+                <form method="post" action="/register" role="form" id="signup-form">
+                    <div class="form-group col-md-4 col-md-offset-4">
+                        <label for="email"><h2>Email</h2></label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
+                        <p id="email-required"class="required">Required Field</p>
                     </div>
-                    <form method="post" action="/register" role="form" id="signup-form">
-
-                           <div class="form-group col-md-4 col-md-offset-4">
-                                <label for="email"><h2>Email</h2></label>
-                                <input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
-                            </div>
-                            <div class="form-group col-md-4 col-md-offset-4">
-                                <label for="zipcode"><h2>Zipcode</h2></label>
-                                <input type="text" class="form-control" id="zipcode" name="zipcode" placeholder="Enter zipcode">
-                            </div>
-                            <div class="form-group col-md-4 col-md-offset-4">
-                                <h4>I want to be a...<h4>
+                    <div class="form-group col-md-4 col-md-offset-4">
+                        <label for="zipcode"><h2>Zipcode</h2></label>
+                        <input type="text" class="form-control" id="zipcode" name="zipcode" placeholder="Enter zipcode">
+                        <p id="zipcode-required"class="required">Required field</p>
+                    </div>
+                    <div class="form-group col-md-4 col-md-offset-4">
+                        <h4>I want to be a...<h4>
                                 <span class="button-checkbox">
                                     <button type="button" class="btn btn-city">
                                         courier
@@ -593,70 +602,83 @@
                                     <option value="5">couple of times a year</option>
                                 </select>
                             </div>
-                       
+
                             <div class="form-group col-md-4 col-md-offset-4">
                                 <button id="submitb"type="submit" class="btn btn-lg">
                                     Request Early Access
                                 </button>
                             </div>
                         </div>
+                    </div>
                 </div>
             </div>
-        </div>
 
-    </body>
-    <script>
-     /*
-     * Replace all SVG images with inline SVG
-     */
-    function svgfy(){
-     jQuery('.svg').each(function(){
-            var $img = jQuery(this);
-            var imgID = $img.attr('id');
-            var imgClass = $img.attr('class');
-            var imgURL = $img.attr('src');
+        </body>
+        <script>
 
-            jQuery.get(imgURL, function(data) {
-                // Get the SVG tag, ignore the rest
-                var $svg = jQuery(data).find('svg');
+            //sets autoplay volume to 0
+            function novolume(){
+                var frame = $('#video iframe'),
+                    url = frame.attr('src').split('?')[0],
+                    data = {method:'setVolume', value:0};
 
-                // Add replaced image's ID to the new SVG
-                if(typeof imgID !== 'undefined') {
-                    $svg = $svg.attr('id', imgID);
-                }
-                // Add replaced image's classes to the new SVG
-                if(typeof imgClass !== 'undefined') {
-                    $svg = $svg.attr('class', imgClass+' replaced-svg');
-                }
-
-                // Remove any invalid XML tags as per http://validator.w3.org
-                $svg = $svg.removeAttr('xmlns:a');
-
-                // Replace image with new SVG
-                $img.replaceWith($svg);
-
-            }, 'xml');
-
-        });
-    }
-
-        function hairDresser(){
-            var topEnds = $('#top').height();
-            var bottomStarts = $('#signup').offset().top - 200;
-            var scroll = $(this).scrollTop();
-            if (scroll > topEnds && scroll < bottomStarts && !$("#nav").is(':visible')){
-                $('#nav').slideDown('slow');
-            } else if( (scroll <= topEnds || scroll >= bottomStarts)
-                    && $('#nav').is(':visible')){
-                $('#nav').slideUp('slow');
+                frame[0].contentWindow.postMessage(JSON.stringify(data),'http:'+url);
             }
-        }
+           
 
-        function setupCheckboxes(){
-            $('.button-checkbox').each(function () {
+            /*
+            * Replace all SVG images with inline SVG
+            */
+            function svgfy(){
+                jQuery('.svg').each(function(){
+                    var $img = jQuery(this);
+                    var imgID = $img.attr('id');
+                    var imgClass = $img.attr('class');
+                    var imgURL = $img.attr('src');
 
-                // Settings
-                var $widget = $(this),
+                    jQuery.get(imgURL, function(data) {
+                        // Get the SVG tag, ignore the rest
+                        var $svg = jQuery(data).find('svg');
+
+                        // Add replaced image's ID to the new SVG
+                        if(typeof imgID !== 'undefined') {
+                            $svg = $svg.attr('id', imgID);
+                        }
+                        // Add replaced image's classes to the new SVG
+                        if(typeof imgClass !== 'undefined') {
+                            $svg = $svg.attr('class', imgClass+' replaced-svg');
+                        }
+
+                        // Remove any invalid XML tags as per http://validator.w3.org
+                        $svg = $svg.removeAttr('xmlns:a');
+
+                        // Replace image with new SVG
+                        $img.replaceWith($svg);
+
+                    }, 'xml');
+
+                });
+            }
+
+            //inspects scroll and puts or takes away header
+            function hairDresser(){
+                var topEnds = $('#top').height();
+                var bottomStarts = $('#signup').offset().top - 200;
+                var scroll = $(this).scrollTop();
+                if (scroll > topEnds && scroll < bottomStarts && !$("#nav").is(':visible')){
+                    $('#nav').slideDown('slow');
+                } else if( (scroll <= topEnds || scroll >= bottomStarts)
+                && $('#nav').is(':visible')){
+                    $('#nav').slideUp('slow');
+                }
+            }
+
+            //setup checkboxes
+            function setupCheckboxes(){
+                $('.button-checkbox').each(function () {
+
+                    // Settings
+                    var $widget = $(this),
                     $button = $widget.find('button'),
                     $checkbox = $widget.find('input:checkbox'),
                     settings = {
@@ -668,63 +690,102 @@
                         }
                     };
 
-                // Event Handlers
-                $button.on('click', function () {
-                    $checkbox.prop('checked', !$checkbox.is(':checked'));
-                    $checkbox.triggerHandler('change');
-                    //updateDisplay();
-                });
-                $checkbox.on('change', function () {
-                    updateDisplay();
-                });
+                    // Event Handlers
+                    $button.on('click', function () {
+                        $checkbox.prop('checked', !$checkbox.is(':checked'));
+                        $checkbox.triggerHandler('change');
+                        //updateDisplay();
+                    });
+                    $checkbox.on('change', function () {
+                        updateDisplay();
+                    });
 
-                // Actions
-                function updateDisplay() {
-                    var isChecked = $checkbox.is(':checked');
+                    // Actions
+                    function updateDisplay() {
+                        var isChecked = $checkbox.is(':checked');
 
-                    // Set the button's state
-                    $button.data('state', (isChecked) ? "on" : "off");
+                        // Set the button's state
+                        $button.data('state', (isChecked) ? "on" : "off");
 
-                    // Set the button's icon
+                        // Set the button's icon
 
-                    // Update the button's color
-                    if (isChecked) {
-                        $button.find('.state-icon')
+                        // Update the button's color
+                        if (isChecked) {
+                            $button.find('.state-icon')
                             .remove();
-                        $button.prepend('<img class="state-icon" src="img/' + settings[$button.data('state')].icon + '">');
-                        $button.find('.state-icon').attr('stroke','white');
-                        $button
+                            $button.prepend('<img class="state-icon" src="img/' + settings[$button.data('state')].icon + '">');
+                            $button.find('.state-icon').attr('stroke','white');
+                            $button
                             .addClass('active');
-                    }
-                    else {
-                        $button.find('.state-icon')
+                        }
+                        else {
+                            $button.find('.state-icon')
                             .remove();
-                        $button.prepend('<img class="state-icon" src="img/' + settings[$button.data('state')].icon + '">');
-                        $button
+                            $button.prepend('<img class="state-icon" src="img/' + settings[$button.data('state')].icon + '">');
+                            $button
                             .removeClass('active')
+                        }
+                        svgfy();
                     }
-                    svgfy();
+
+                    // Initialization
+                    function init() {
+                        updateDisplay();
+                    }
+                    init();
+                });
+            }
+
+            var emailRegex = /[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\.[a-zA-Z]{2,4}/;
+
+            function validate(){
+                var email = $('#email').val();
+                var zipcode = $('#zipcode').val();
+                var check = true;
+                if(!email.length || !emailRegex.test(email)){
+                    //TODO required filed on zipcode
+                    $('#email-required').show();
+                    check = false;
+                }else{
+                    $('#email-required').hide();
                 }
 
-                // Initialization
-                function init() {
-                    updateDisplay();
+                if(!zipcode.length || zipcode.length > 9 || !(/^\d+$/.test(zipcode))){
+                    $('#zipcode-required').show();
+                    check = false;
+                }else{
+                    $('#zipcode-required').hide();
                 }
-                init();
+
+                return check;
+            }
+
+            function postForm(e){
+                e.preventDefault(e);
+                console.log(e.currentTarget);
+                if(validate()){
+                    e.currentTarget.submit();
+                }else{
+                    console.log('hellad');
+                }
+            }
+
+            //ready for execution
+            $(window).on('scroll', hairDresser);
+            $(document).ready(function(){
+                $('#nav').hide();
+                hairDresser();
+                setupCheckboxes();
+                svgfy();
             });
-        }
 
-        $(window).on('scroll', hairDresser);
-        $(document).ready(function(){
-            $('#nav').hide();
-            hairDresser();
-            setupCheckboxes();
-            svgfy();
-        });
+            $('#signup-form').submit(postForm);
+            //when ready, decrease volume to 0
+            $('#video iframe').load(novolume);
 
-
-        window.viewportUnitsBuggyfill.init();
-    </script>
-</html>
+            //viewport bug fix
+            window.viewportUnitsBuggyfill.init();
+        </script>
+    </html>
 
 
