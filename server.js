@@ -11,7 +11,9 @@ function startService(route, handlers){
 
    //first responder to request
     function onRequest(request, response){
-        var pathname = url.parse(request.url).pathname;
+        var requestParsed = url.parse(request.url);
+        var pathname = requestParsed.pathname;
+        var query = requestParsed.query;
 		console.log('---new request'.rainbow);
                 
         //TODO to be changed
@@ -51,7 +53,7 @@ function startService(route, handlers){
         });
 
         request.addListener('end',function(){
-            route(handlers, pathname, response, postData);
+            route(handlers, pathname, query, response, postData);
         });
 
         //for requests not for CSS & JS dependency files
