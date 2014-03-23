@@ -5,7 +5,7 @@ var requestHandlers = require('./requestHandlers');
 var handlers = {}; //handler object
 
 handlers['/'] = requestHandlers.front;
-handlers['/front'] = requestHandlers.front;
+handlers['/signup'] = requestHandlers.front;
 handlers['/register'] = requestHandlers.register;
 handlers['/thanks'] = requestHandlers.thanks;
 handlers['/confirmed'] = requestHandlers.confirmed;

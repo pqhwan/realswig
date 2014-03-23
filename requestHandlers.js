@@ -17,6 +17,7 @@ var emailRegex = /[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\.[a-zA-Z]{2,4}/;
 
 //precompiled registration email
 var confirmationEmail = hogan.compile(fs.readFileSync('html/confirmation_email.html').toString());
+var thankyouPage= hogan.compile(fs.readFileSync('html/thank_you.html').toString());
 
 //make smtp transport object
 //TODO WARNING--contains critical credentials
@@ -52,11 +53,11 @@ function front(query, response, postData){
 }
 
 function thanks(query, response, postData){
-    fs.readFile('html/thank_you.html', function(err,data){
-        response.writeHead(200,{'Content-Type':'text/html'});
-        response.write(data);
-        response.end();
-    });
+    var hash = querystring.parse(query).id;
+
+    response.writeHead(200,{'Content-Type':'text/html'});
+    response.write(thankyouPage.render({id:hash}));
+    response.end();
 }
 
 function confirmed(query, response, postData){
@@ -115,7 +116,7 @@ function register(query, response, postData){
     });
 
     //TODO redirect users to something a bit more useful
-    response.writeHead(302,{'Location':'thanks'});
+    response.writeHead(302,{'Location':'thanks?id='+parsed.hash});
     response.write("Thank you for registering!");
     response.end();
     return 200;
@@ -154,7 +155,6 @@ function validate(parsed){
 
 
 function confirmRegistration(client, hash){
-    console.log(hash);
     client.query({
         text:'UPDATE emails SET confirmed=true WHERE hash=$1',
         values:[hash]
