@@ -18,6 +18,7 @@ var emailRegex = /[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\.[a-zA-Z]{2,4}/;
 //precompiled registration email
 var confirmationEmail = hogan.compile(fs.readFileSync('html/confirmation_email.html').toString());
 var thankyouPage= hogan.compile(fs.readFileSync('html/thank_you.html').toString());
+var frontPage = hogan.compile(fs.readFileSync('html/demopage_responsive.html').toString());
 
 //make smtp transport object
 //TODO WARNING--contains critical credentials
@@ -25,6 +26,8 @@ var smtpTransport = nodemailer.createTransport('SES',{
     AWSAccessKeyID: 'AKIAIX2NFN5QVP54FWNQ',
     AWSSecretKey: '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'
 });
+
+var HASH_LEN = 32;
 
 //Default mailOption
 var mailOptions = {
@@ -43,13 +46,11 @@ var mailOptions = {
 /*-------------------------routes---------------------------*/
 
 function front(query, response, postData){
-    //for root dir GET request
-    //test page transfer
-    fs.readFile('html/demopage_responsive.html', function(err, data){
-        response.writeHead(200,{'Content-Type':'text/html'});
-        response.write(data);
-        response.end();
-    });
+    var hash = querystring.parse(query).id;
+
+    response.writeHead(200,{'Content-Type':'text/html'});
+    response.write(frontPage.render({id:hash}));
+    response.end();
 }
 
 function thanks(query, response, postData){
@@ -84,6 +85,9 @@ function confirmed(query, response, postData){
 function register(query, response, postData){
     //for handling form POST upload on registeration
     var parsed = querystring.parse(postData);
+    var referrer = querystring.parse(query).id;
+
+    console.log(referrer);
 
     //validate fields
     if(!validate(parsed)){
@@ -100,7 +104,12 @@ function register(query, response, postData){
             console.error('error fetching client from pool',error);
             return 505;
         }
+
         storeRegistration(client,parsed);
+        if(referrer && referrer.length == HASH_LEN && referrer != parsed.hash){
+            console.log('referral identified');
+            verifyNstoreReferral(client, referrer, parsed.hash);
+        }
     });
 
     //set mail option
@@ -195,6 +204,25 @@ function storeRegistration(client,parsed){
         //here?
         if(err)console.error('pgsql error',err);
     });
+}
+
+function verifyNstoreReferral(client, referrerHash, referredHash){
+
+    client.query({
+        text:'select * from emails where hash=$1',
+        values:[referrerHash]
+    }, function(err,result){
+        if(err)console.error('pgsql error',err);
+        if(result.rowCount){
+            client.query({
+                text:'insert into referrals values($1,$2)',
+                values:[referrerHash,referredHash]
+            }, function(err,result){
+                if(err)console.error('pgsql error',err);
+            });
+        }
+    });
+
 }
 
 

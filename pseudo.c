@@ -17,10 +17,12 @@ DEV
         #include it in the confirmation email
 
     referred: the referred clicks on it
-        -register route now checks for a referrer query string value
-        -add newcomer to emails table
-        -query db for referrer with hash value
-        -if referrer is genuine, insert into referrals values(referrer, referred,
+        #/register route now checks for a referrer query string value
+        #add newcomer to emails table
+        #query db for referrer with hash value
+        #if referrer is genuine, insert into referrals values(referrer, referred,
+        #!!!make sure referrer and referred are different
+        !!!make sure users already signed up cannot get referred
 
 DEPLOY
     -run schema.sql
