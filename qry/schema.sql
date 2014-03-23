@@ -14,5 +14,7 @@ create table emails(
 )
 
 create table referrals(
-
+    referrer varchar(32),
+    referred varchar(32)
 )
+
