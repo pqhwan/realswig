@@ -92,7 +92,6 @@ function register(query, response, postData){
 
     //hash email + zipcode with md5
     parsed.hash = crypto.createHash('md5').update(parsed.email+parsed.zipcode).digest('hex');
-    console.log(parsed.hash);
 
     //store it in db
     pg.connect(dbconn,function(err,client,done){
@@ -106,7 +105,6 @@ function register(query, response, postData){
     //set mail option
     mailOptions.to = parsed.email;
     mailOptions.html = confirmationEmail.render({hash:parsed.hash});
-    console.log(mailOptions.html);
 
     //TODO don't assume that the transport is open
     smtpTransport.sendMail(mailOptions,function(err,response){
