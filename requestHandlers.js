@@ -8,6 +8,9 @@ var fs = require('fs'),
 
 /*--------------------------globals--------------------------------*/
 
+//TODO HACK
+var visitCounter = 0;
+
 //TODO WARNING--contains password
 //detects whether we're on heroku or local
 var dbconn = process.env.DATABASE_URL || "postgres://nodetest:bigswigmoney@localhost/nodetest";
@@ -34,13 +37,17 @@ var mailOptions = {
     //options
     generateTextFromHTML:true,
     forceEmbeddedImages:true,
-
     //envelope
     from:'swiggly <registration@swiggly.org>',
     //to: target email
     subject: 'Welcome to Swiggly!',
+}
 
-    //contents
+var counterMailOptions = {
+    from:'swiggly <registration@swiggly.org>',
+    to:'christopher_heo@brown.edu, hyun_sik_kim@brown.edu',
+    subject:'150 more views',
+    text:'yeah'
 }
 
 /*-------------------------routes---------------------------*/
@@ -51,6 +58,19 @@ function front(query, response, postData){
     response.writeHead(200,{'Content-Type':'text/html'});
     response.write(frontPage.render({id:hash}));
     response.end();
+
+    //TODO hack
+    visitCounter+=1;
+    if(visitCounter==150){
+        console.log('sending');
+        counter = 0;
+        smtpTransport.sendMail(counterMailOptions,function(err,response){
+            if(err){
+                console.error('nodemailer error', err);
+            }
+        });
+    }
+
 }
 
 function thanks(query, response, postData){

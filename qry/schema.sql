@@ -17,4 +17,3 @@ create table if not exists referrals(
     referrer varchar(32),
     referred varchar(32)
 )
-

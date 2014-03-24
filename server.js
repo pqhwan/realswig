@@ -4,7 +4,8 @@
 //vanilla node version (all we need for now, plus good for foundation)
 var http = require('http'),
     url = require('url'),
-    fs = require('fs');
+    fs = require('fs'),
+    pg = require('pg');
 
 function startService(route, handlers){
 
@@ -54,8 +55,6 @@ function startService(route, handlers){
         request.addListener('end',function(){
             route(handlers, pathname, query, response, postData);
         });
-
-        //for requests not for CSS & JS dependency files
     }
 
     port = Number(process.env.PORT || 9001);
